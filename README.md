@@ -31,6 +31,7 @@ pip install -r requirements.txt
 
 ```
 OPENAI_API_KEY=<YOUR-API-KEY-HERE>
+PROXYCURL_API_KEY=<YOUR-API-KEY-HERE>
 ```
 
 ### 5. Run the desired projects

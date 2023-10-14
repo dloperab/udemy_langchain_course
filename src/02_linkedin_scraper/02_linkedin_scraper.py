@@ -25,7 +25,7 @@ if __name__ == "__main__":
 
     linkedin_data = scrape_linkedin_profile(
         linkedin_profile_url="https://www.linkedin.com/in/dloperab/",
-        mock_profile=False,
+        mock_data=True,
     )
 
     print(chain.run(information=linkedin_data))
