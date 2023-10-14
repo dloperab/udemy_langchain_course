@@ -4,7 +4,7 @@ from langchain.chains import LLMChain
 
 from dotenv import load_dotenv
 
-from src.integrations.linkedin import scrape_linkedin_profile
+from src.integrations.linkedin import scrape_profile
 
 load_dotenv()
 
@@ -20,10 +20,10 @@ if __name__ == "__main__":
         input_variables=["information"], template=summary_template
     )
 
-    llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo")
+    llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo")
     chain = LLMChain(llm=llm, prompt=summary_prompt_template)
 
-    linkedin_data = scrape_linkedin_profile(
+    linkedin_data = scrape_profile(
         linkedin_profile_url="https://www.linkedin.com/in/dloperab/",
         mock_data=True,
     )
