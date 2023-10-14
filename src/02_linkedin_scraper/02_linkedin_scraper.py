@@ -23,6 +23,9 @@ if __name__ == "__main__":
     llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo")
     chain = LLMChain(llm=llm, prompt=summary_prompt_template)
 
-    linkedin_data = scrape_linkedin_profile(linkedin_profile_url="https://www.linkedin.com/in/eden-marco/", mock_profile=True)
+    linkedin_data = scrape_linkedin_profile(
+        linkedin_profile_url="https://www.linkedin.com/in/dloperab/",
+        mock_profile=False,
+    )
 
     print(chain.run(information=linkedin_data))
