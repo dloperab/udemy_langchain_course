@@ -17,20 +17,20 @@ In 1969, she joined the International Agency for Research on Cancer (IARC) headq
 She retired from the IARC in 2001, but continues to work at the Catalan Institute of Oncology in Barcelona and the National Cancer Institute in Bogota where she is Emeritus Professor.[5]
 """
 
-if __name__ == "__main__":    
-  print("Hello LancgChain!")
+if __name__ == "__main__":
+    print("Hello LancgChain!")
 
-  summary_template = """
+    summary_template = """
     given the information {information} about a person from. I want you to create:
     1. a short summary (2 sentences max)
     2. two interesting facts about them
   """
 
-  summary_prompt_template = PromptTemplate(
-    input_variables=["information"], template=summary_template
-  )
+    summary_prompt_template = PromptTemplate(
+        input_variables=["information"], template=summary_template
+    )
 
-  llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo")
-  chain = LLMChain(llm=llm, prompt=summary_prompt_template)
+    llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo")
+    chain = LLMChain(llm=llm, prompt=summary_prompt_template)
 
-  print(chain.run(information=information))
+    print(chain.run(information=information))
