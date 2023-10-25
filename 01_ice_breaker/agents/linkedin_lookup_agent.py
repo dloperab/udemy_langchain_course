@@ -2,6 +2,8 @@ from langchain.prompts import PromptTemplate
 from langchain.chat_models import ChatOpenAI
 from langchain.agents import initialize_agent, Tool, AgentType
 
+from tools.tools import get_linkedin_profile_url
+
 
 def lookup(name: str) -> str:
     llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo")
@@ -11,8 +13,8 @@ def lookup(name: str) -> str:
 
     agent_tools = [
         Tool(
-            name="Crawl Google for LinkedIn profile",
-            func="?",
+            name="Crawl Google for LinkedIn profile page",
+            func=get_linkedin_profile_url,
             description="Useful for when you need the LinkedIn page url",
         )
     ]

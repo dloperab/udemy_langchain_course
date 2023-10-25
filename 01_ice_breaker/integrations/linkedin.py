@@ -2,7 +2,7 @@ import os
 import requests
 
 
-def scrape_profile(linkedin_profile_url: str, mock_data: False):
+def scrape_linkedin_profile(linkedin_profile_url: str, mock_data: False):
     """Scrape information from LinkedIn profiles,
     Manually scrape the information from the LinkedIn profile"""
 
