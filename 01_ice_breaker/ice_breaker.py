@@ -6,21 +6,29 @@ from dotenv import load_dotenv
 
 from agents.linkedin_lookup_agent import lookup as linkedin_lookup_agent
 from integrations.linkedin import scrape_linkedin_profile
+from output_parsers import PersonIntel, person_intel_parser
 
 load_dotenv()
 
 
-if __name__ == "__main__":
-    linkedin_profile_url = linkedin_lookup_agent(name="Eden Marco Udemy")
+def ice_break(name: str) -> PersonIntel:
+    linkedin_profile_url = linkedin_lookup_agent(name=name)
 
     summary_template = """
       Given the LinkedIn information {information} about a person from, I want you to create:
       1. A short summary
       2. Two interesting facts about them
+      3. A topic that may interest them
+      4. Two creative ice breakers to open a conversation with them
+      \n{format_instructions}
     """
 
     summary_prompt_template = PromptTemplate(
-        input_variables=["information"], template=summary_template
+        input_variables=["information"],
+        template=summary_template,
+        partial_variables={
+            "format_instructions": person_intel_parser.get_format_instructions()
+        },
     )
 
     llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo")
@@ -31,4 +39,12 @@ if __name__ == "__main__":
         mock_data=False,
     )
 
-    print(chain.run(information=linkedin_data))
+    result = chain.run(information=linkedin_data)
+
+    return person_intel_parser.parse(result)
+
+
+if __name__ == "__main__":
+    result = ice_break(name="Eden Marco Udemy")
+    
+    print(result)
