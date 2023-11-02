@@ -33,6 +33,11 @@ pip install -r requirements.txt
 OPENAI_API_KEY=<YOUR-API-KEY-HERE>
 PROXYCURL_API_KEY=<YOUR-API-KEY-HERE>
 SERPAPI_API_KEY=<YOUR-API-KEY-HERE>
+PINECONE_API_KEY=<YOUR-API-KEY-HERE>
+PINECONE_ENVIRONMENT_REGION=<YOUR-API-KEY-HERE>
 ```
 
 ### 5. Run the desired project
+ * Ice Breaker based on LinkedIn information: ```python 01_ice_breaker/app.py```
+ * Documentation Helper (Based on Langchain Docs):
+    * Data ingestion to Vector Store: ```python 02_documentation_helper/ingestion.py```
