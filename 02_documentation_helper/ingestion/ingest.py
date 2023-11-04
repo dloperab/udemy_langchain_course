@@ -32,7 +32,7 @@ def ingest_docs():
     for doc in documents:
         new_url = doc.metadata["source"]
         new_url = new_url.replace("langchain-docs", "https:/")
-        doc.metadata.update({"source": new_url})    
+        doc.metadata.update({"source": new_url})
 
     embeddings = OpenAIEmbeddings()
     print(f"Going to add {len(documents)} docs to Pinecone")

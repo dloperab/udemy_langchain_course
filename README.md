@@ -38,6 +38,16 @@ PINECONE_ENVIRONMENT_REGION=<YOUR-API-KEY-HERE>
 ```
 
 ### 5. Run the desired project
- * Ice Breaker based on LinkedIn information: ```python 01_ice_breaker/app.py```
+ * Ice Breaker based on LinkedIn information:
+   ```bash
+    cd 01_ice_breaker
+    python app.py
+   ```
+
  * Documentation Helper (Based on Langchain Docs):
-    * Data ingestion to Vector Store: ```python 02_documentation_helper/ingestion.py```
+    * Download Langchain docs: ```wget -r -A.html -P langchain-docs https://api.python.langchain.com/en/latest/api_reference.html```
+    * Data ingestion to Vector Store:
+      ```bash
+        cd 02_documentation_helper/ingestion
+        python ingest.py
+      ```
