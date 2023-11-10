@@ -45,7 +45,11 @@ PINECONE_ENVIRONMENT_REGION=<YOUR-API-KEY-HERE>
    ```
 
  * Documentation Helper (Based on Langchain Docs):
-    * Download Langchain docs: ```wget -r -A.html -P langchain-docs https://api.python.langchain.com/en/latest/api_reference.html```
+    * Download Langchain docs:
+      ```bash
+      wget -r -A.html -P langchain-docs https://api.python.langchain.com/en/latest/api_reference.html
+      ```
+    
     * Data ingestion to Vector Store:
       ```bash
         cd 02_documentation_helper/ingestion
