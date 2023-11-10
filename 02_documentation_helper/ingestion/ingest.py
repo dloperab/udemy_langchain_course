@@ -6,10 +6,10 @@ from langchain.document_loaders import ReadTheDocsLoader
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import Pinecone
+
 import pinecone
 
 load_dotenv()
-
 
 pinecone.init(
     api_key=os.environ["PINECONE_API_KEY"],
