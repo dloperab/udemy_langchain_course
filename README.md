@@ -55,3 +55,14 @@ PINECONE_ENVIRONMENT_REGION=<YOUR-API-KEY-HERE>
         cd 02_documentation_helper/ingestion
         python ingest.py
       ```
+
+    * Test backend:
+      ```bash
+        cd 02_documentation_helper
+        python backend/core.py
+      ```
+
+    * Run web app:
+      ```bash
+        streamlit run .\02_documentation_helper\main.py 
+      ```
